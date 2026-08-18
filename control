@@ -1,0 +1,9 @@
+﻿Package: com.xmly.unlock.vip
+Name: XimalayaVIPUnlock
+Version: 2026.08.18
+Architecture: iphoneos-arm
+Description: 喜马拉雅+会员解锁插件（移植自圈X重写脚本）
+Maintainer: GieGie777
+Depends: mobilesubstrate (>= 0.9.6301)
+Section: Tweaks
+Homepage: https://t.me/GieGie777
