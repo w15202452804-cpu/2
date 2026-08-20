@@ -1,0 +1,29 @@
+name: Compile XMLY Tweak
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Theos
+        run: |
+          git clone --recursive https://github.com/theos/theos.git $HOME/theos
+          echo "THEOS=$HOME/theos" >> $GITHUB_ENV
+
+      - name: Build package
+        run: |
+          make package
+          ls _packages/
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ximalaya-vip-unlock
+          path: _packages/*.deb
